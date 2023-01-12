@@ -1,0 +1,133 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    font-family: 'Oswald', sans-serif;
+    --lg: 50px;
+    --md: 30px;
+    --sm: 20px;
+    --color-p: gray;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+main{
+    padding: 0 10px;
+}
+/*HERO SECTION-------------------------------------------*/
+.hero{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid gainsboro;
+}
+.info h1{
+    font-size: var(--lg);
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.info p{
+    font-size: var(--sm);
+    font-weight: lighter;
+    color: var(--color-p);
+}
+.hero img{
+    display: none;
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+.hero button{
+    border: none;
+    width: 150px;
+    height: 35px;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+    background-color: #fb8c00;
+    font-weight: bolder;
+}
+
+/*OUR SERVICES --------------------------------------------------------*/
+.services{
+    margin-top: 10px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid gainsboro;
+}
+.services h2{
+    color: var(--color-p);
+    text-align: center;
+    font-size: var(--md);
+    font-weight: 500;
+    width: 100%;
+}
+.services .main-grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+.services .main-grid-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.services .main-grid-container .elem1{
+    grid-area: 1 / 1 / 3 / 3;
+}
+
+/*HOME MENU----------------------------------------------------------*/
+.menu{
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.menu h2{
+    text-align: center;
+    font-size: var(--md);
+    color: var(--color-p);
+    font-weight: 500;
+}
+.menu-grid-container{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    place-content: center;
+    gap: 5px;
+}
+.menu-grid-container .menu-grid-item{
+    background-color: #fb8c00;
+    border-radius: 12px;
+
+}
+.menu-grid-container .menu-grid-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*BREAKPOINTS: MediaQueries---------------------------------------------------------*/
+@media screen and (min-width: 768px){
+    .hero{
+        grid-template-columns: 2fr 3fr;
+    }
+        .hero .info{
+            margin: auto 0;
+        }
+        .hero .info p{
+            max-width: 360px;
+            margin: 30px auto;
+        }
+        .hero img{
+            display: block;
+        }
+    .services .main-grid-container{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+}
